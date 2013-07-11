@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="Maker" ng-csp>
+  <head>
+    <title>Manifest Maker</title>
+    <link rel="stylesheet" href="topcoat-desktop-dark.min.css" type="text/css">
+    <link rel="stylesheet" href="maker.css" type="text/css">
+  </head>
+  <body ng-controller="ManifestController" class="dark">
+    
+    <div class="container">
+      
+      <h1>Manifest Maker</h1>
+    
+      <div class="manifest container">
+      
+        <label>Name</label>
+        <input ng-model="manifest.name" class="topcoat-text-input" placeholder="Application Name Here">
+        
+        <label>URL</label>
+        <input ng-model="manifest.app.launch.web_url" class="topcoat-text-input" placeholder="www.example.com">
+        
+      </div>
+      
+      <div class="image-landing container">
+        <label>Drag Image Here</label>
+        <img ng-show="image" ng-src="{{image.src}}">
+      </div>
+      
+      <hr>
+      
+      <button class="topcoat-button--cta" ng-click="generate()">Generate</button>
+      
+      <pre>
+  todo:
+  =====
+  Bring in topcoat as CSS
+  Add drag/drop images
+  Resize images if necessary
+      </pre>
+      
+    </div>
+    
+    <script src="angular.min.js"></script>
+    <script src="maker.js"></script>
+  </body>
+</html>

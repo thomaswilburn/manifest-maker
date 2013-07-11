@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  color: #F0F1F1;
+}
+
+input {
+  vertical-align: middle !important;
+}
+
+label {
+  font-size: 28px;
+}
+
+hr {
+  margin: 1em 0;
+  color: #F0F1F1;
+}
+
+.container {
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.manifest {
+  outline: 1px solid #F0F1F1;
+}
+
+.image-landing {
+  outline: 1px dashed #F0F1F1;
+  height: 10em;
+  line-height: 8em;
+  text-align: center;
+  vertical-align: middle;
+}

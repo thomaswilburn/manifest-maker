@@ -1,0 +1,14 @@
+{
+  "name": "Manifest Maker",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  
+  "description": "Create a Chrome OS app from any website.",
+  "offline_enabled": true,
+  "homepage_url": "http://thomaswilburn.net",
+  "app": {
+    "launch": {
+      "local_path": "index.html"
+    }
+  }
+}
