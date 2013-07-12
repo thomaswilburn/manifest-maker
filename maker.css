@@ -6,12 +6,22 @@ body {
   color: #F0F1F1;
 }
 
+h1 {
+  margin: 0;
+}
+
 input {
   vertical-align: middle !important;
 }
 
 label {
   font-size: 28px;
+}
+
+.manifest label {
+  text-align: right;
+  width: 150px;
+  display: inline-block;
 }
 
 hr {
@@ -21,7 +31,6 @@ hr {
 
 .container {
   padding: 1em;
-  margin: 1em 0;
 }
 
 .manifest {
@@ -34,4 +43,23 @@ hr {
   line-height: 8em;
   text-align: center;
   vertical-align: middle;
+}
+
+label.imageFile {
+  width: 195px;
+  margin: 5px;
+  text-align: center;
+}
+
+input[type="file"] {
+  height: 3rem;
+  width: 100%;
+  padding: 12px;
+  display: none;
+}
+
+#generate {
+  margin: auto;
+  display: block;
+  width: 200px;
 }

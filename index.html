@@ -13,30 +13,40 @@
     
       <div class="manifest container">
       
-        <label>Name</label>
-        <input ng-model="manifest.name" class="topcoat-text-input" placeholder="Application Name Here">
+        <div class="controls">
+          <label>Name</label>
+          <input ng-model="manifest.name" class="topcoat-text-input" placeholder="Application Name Here">
+        </div>
         
-        <label>URL</label>
-        <input ng-model="manifest.app.launch.web_url" class="topcoat-text-input" placeholder="www.example.com">
+        <div class="controls">
+          <label>Description</label>
+          <input ng-model="manifest.description" class="topcoat-text-input" placeholder="What is this?">
+        </div>
+        
+        <div class="controls">
+          <label>URL</label>
+          <input ng-model="manifest.app.launch.web_url" class="topcoat-text-input" placeholder="www.example.com">
+        </div>
+        
+        <div class="controls">
+          <label for="nothing">Icon (128px)</label>
+          <label class="imageFile topcoat-button" for="imageFileInput">choose image</label>
+          <input class="topcoat-text-input" type="file" id="imageFileInput" name="imageFileInput">
+        </div>
         
       </div>
       
+      <!--
+      //since we're not allowed to save multiple images, we'll have to settle for this
       <div class="image-landing container">
         <label>Drag Image Here</label>
         <img ng-show="image" ng-src="{{image.src}}">
       </div>
+      -->
       
       <hr>
       
-      <button class="topcoat-button--cta" ng-click="generate()">Generate</button>
-      
-      <pre>
-  todo:
-  =====
-  Bring in topcoat as CSS
-  Add drag/drop images
-  Resize images if necessary
-      </pre>
+      <button class="topcoat-button--cta" ng-click="generate()" id="generate">Generate</button>
       
     </div>
     

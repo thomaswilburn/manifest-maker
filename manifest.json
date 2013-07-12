@@ -7,8 +7,10 @@
   "offline_enabled": true,
   "homepage_url": "http://thomaswilburn.net",
   "app": {
-    "launch": {
-      "local_path": "index.html"
+    "background": {
+      "scripts": [ "background.js" ]
     }
-  }
+  },
+  
+  "permissions": [ "storage", { "fileSystem": ["write"] } ]
 }
