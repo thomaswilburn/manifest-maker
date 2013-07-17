@@ -32,13 +32,16 @@ Maker.controller("ManifestController", ["$scope", function($scope) {
     //save the image out to the chosen directory
     //can we use a data URL?
     //
-    var json = JSON.stringify(manifest);
+    var json = JSON.stringify(manifest, null, 2);
     
     chrome.fileSystem.chooseEntry({
       type: "saveFile"
     }, function(fileEntry) {
-      console.log(arguments);
-      window.file = fileEntry;
+      console.log(fileEntry);
+      fileEntry.createWriter(function(writer) {
+        var blob = new Blob([json], {type: "text/plain"});
+        writer.write(blob);
+      });
     });
   }
   

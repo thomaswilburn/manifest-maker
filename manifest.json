@@ -12,5 +12,5 @@
     }
   },
   
-  "permissions": [ "storage", { "fileSystem": ["write"] } ]
+  "permissions": [ { "fileSystem": ["write"] } ]
 }
