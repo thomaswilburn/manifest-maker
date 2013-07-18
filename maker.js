@@ -27,20 +27,31 @@ Maker.controller("ManifestController", ["$scope", function($scope) {
   $scope.image = false;
   
   $scope.generate = function() {
-    var manifest = $scope.manifest;
+    
+    var manifest = {};
+    //make a copy so we can delete things if necessary
+    for (var key in $scope.manifest) {
+      manifest[key] = $scope.manifest[key];
+    }
     manifest.app.launch.urls = [ manifest.app.launch.web_url ];
-    //save the image out to the chosen directory
-    //can we use a data URL?
-    //
+    //if there's no icon, remove it.
+    if (!manifest.icons["128"]) {
+      delete manifest.icons;
+    }
+    
     var json = JSON.stringify(manifest, null, 2);
     
     chrome.fileSystem.chooseEntry({
-      type: "saveFile"
+      type: "saveFile",
+      suggestedName: "manifest.json"
     }, function(fileEntry) {
-      console.log(fileEntry);
       fileEntry.createWriter(function(writer) {
         var blob = new Blob([json], {type: "text/plain"});
-        writer.write(blob);
+        writer.onwriteend = function() {
+          writer.onwriteend = null;
+          writer.write(blob);
+        }
+        writer.truncate(blob.size);
       });
     });
   }
